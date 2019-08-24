@@ -13,8 +13,8 @@ var route = require("./routes/articles")
 //requiring the path module
 var path = require("path")
 
-// 
-const PORT = 7000;
+// handling the port of server
+const PORT = 3000;
 
 // connecting with the monogdb database
 mongoose.connect("mongodb://localhost/articleData",{useNewUrlParser:true},(err) => {

@@ -10,13 +10,12 @@ route.post("/",(req,res) => {
     // console.log("Post the data");
     Article.create(req.body,(err,createduser) => {
         if (err) console.log("error")
-        console.log("Data received")
+       // console.log("Data received")
         res.send(createduser);
-        // res.send(createduser);
     })
 })
 
-//handling the get route
+//handling the get routeS
 route.get("/",(req,res) => {
     Article.find({},(err,connected) => {
         console.log(connected);
