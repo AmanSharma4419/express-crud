@@ -9,8 +9,12 @@ var articleschema = new schema({
     name: String,
     email: String,
     age:{
-    type:Number,
-    required : true
+    type: Number,
+    required: true
+    },
+    hobby:{
+    type: String,
+    required: true
     }
 },{timestamps: true})
 
