@@ -13,8 +13,7 @@ var articleschema = new schema({
     required: true
     },
     hobby:{
-    type: String,
-    required: true
+    type: String
     }
 },{timestamps: true})
 
