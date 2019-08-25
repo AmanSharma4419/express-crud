@@ -17,13 +17,13 @@ router.post("/",(req,res) => {
 })
 
 //handling the get routes
-router.get("/",(req,res) => {
-    Article.find({},(err,connected) => {
-        if(err) console.log("err")
-        res.send(connected)
-        //res.render("index",{connected})
-    })
-})
+// router.get("/",(req,res) => {
+//     Article.find({},(err,connected) => {
+//         if(err) console.log("err")
+//         res.send(connected)
+//         //res.render("index",{connected})
+//     })
+// })
 //handling the delete route
 router.delete("/:id",(req,res) => {
     var id = req.params.id;
@@ -49,12 +49,19 @@ router.get("/new",(req,res) => {
 })
 //handled route for the submit post req from form.ejs
 router.post("/new",(req,res) => {
-    console.log(req.body);
+    //console.log(req.body);
     Article.create(req.body,(err,submitted) => {
         if(err) console.log("error-while-submitting-form-data")
         res.send(submitted)
     })
 })
-
+//handled route for rendring data in browser
+router.get("/",(req,res) => {
+    Article.find({},(err,displayed) => {
+        if(err) console.log("error-in-displaying")
+        res.render("display",{displayed})
+       // res.send("hello")
+    })
+})
 //exporting the route
 module.exports = router;
